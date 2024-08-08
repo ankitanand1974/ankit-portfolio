@@ -1,27 +1,28 @@
-'use client'
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
-import useDarkMode from '../hooks/useDarkMode'
+'use client';
+
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import useDarkMode from '../hooks/useDarkMode';
 
 export default function Navbar() {
-  const [darkMode, setDarkMode] = useDarkMode()
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [darkMode, setDarkMode] = useDarkMode();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
-        setIsScrolled(true)
+        setIsScrolled(true);
       } else {
-        setIsScrolled(false)
+        setIsScrolled(false);
       }
-    }
+    };
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <>
@@ -102,5 +103,5 @@ export default function Navbar() {
         </div>
       )}
     </>
-  )
+  );
 }
