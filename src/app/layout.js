@@ -4,8 +4,8 @@ import Footer from "./components/Footer";
 import ClientWrapper from "./components/ClientWrapper";
 
 export const metadata = {
-  title: "Your Name - Full Stack Web Developer",
-  description: "Personal portfolio of [Your Name], a Full Stack Web Developer",
+  title: "Ankit Anand - Full Stack Web Developer",
+  description: "Personal portfolio of Ankit Anand, a Full Stack Web Developer",
 };
 
 export default function RootLayout({ children }) {

@@ -31,7 +31,7 @@ export default function Navbar() {
       <nav className={`fixed top-0 left-0 w-full bg-white dark:bg-gray-800 shadow-lg transition-all duration-300 z-40 ${isScrolled ? 'md:opacity-0 md:-translate-y-full' : 'opacity-100'}`}>
         <div className="container mx-auto px-6 py-3">
           <div className="flex justify-between items-center">
-            <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">Your Name</Link>
+            <Link href="/" className="text-xl font-bold text-gray-800 dark:text-white">Ankit Anand</Link>
             <div className="flex items-center space-x-4">
               <div className="hidden md:flex space-x-4">
                 <Link href="/#about" className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">About</Link>
