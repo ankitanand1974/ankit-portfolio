@@ -1,7 +1,7 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import ClientWrapper from "./components/ClientWrapper";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import ClientWrapper from "../components/clientWrapper";
 
 export const metadata = {
   title: "Ankit Anand - Full Stack Web Developer",
