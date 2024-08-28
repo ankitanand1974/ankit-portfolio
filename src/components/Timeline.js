@@ -1,22 +1,11 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
+import { TracingBeam } from "./ui/tracing-beam";
 
 const TimelineSection = () => {
   const [activeTab, setActiveTab] = useState("experience");
   const containerRef = useRef(null);
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollPosition(window.pageYOffset);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+ 
 
   const data = {
     experience: [
@@ -84,52 +73,38 @@ const TimelineSection = () => {
             Education
           </button>
         </div>
-
-        <div className="relative" ref={containerRef}>
-          <div className="absolute top-0 left-1/2 h-full border-l-2 border-gray-300 dark:border-gray-600"></div>
-          {data[activeTab].map((item, index) => (
-            <div
-              key={index}
-              className={`flex items-center mb-12 ${
-                index % 2 === 0 ? "flex-row-reverse" : ""
-              }`}
-            >
+        <TracingBeam>
+          <div className="relative" ref={containerRef}>
+            {data[activeTab].map((item, index) => (
               <div
-                className={`w-1/2 px-6 ${
-                  index % 2 === 0 ? "text-right" : "text-left"
-                }`}
-              >
-                <h3 className="text-lg font-semibold mb-2 dark:text-white">
-                  {item.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {item.company || item.institution}
-                </p>
-                <p className="text-gray-500 dark:text-gray-400">{item.date}</p>
-                <p className="text-gray-700 dark:text-gray-300">
-                  {item.description}
-                </p>
-              </div>
-              <div
-                className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${
-                  index % 2 === 0 ? "ml-4" : "-ml-4"
+                key={index}
+                className={`flex items-center mb-12 ${
+                  index % 2 === 0 ? "flex-row-reverse" : ""
                 }`}
               >
                 <div
-                  className={`w-6 h-6 bg-blue-500 rounded-full ${
-                    containerRef.current &&
-                    scrollPosition >= containerRef.current.offsetTop &&
-                    scrollPosition <=
-                      containerRef.current.offsetTop +
-                        containerRef.current.offsetHeight
-                      ? "animate-bounce"
-                      : ""
+                  className={`w-1/2 px-6 ${
+                    index % 2 === 0 ? "text-right" : "text-left"
                   }`}
-                ></div>
+                >
+                  <h3 className="text-lg font-semibold mb-2 dark:text-white">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-600 dark:text-gray-400">
+                    {item.company || item.institution}
+                  </p>
+                  <p className="text-gray-500 dark:text-gray-400">
+                    {item.date}
+                  </p>
+                  <p className="text-gray-700 dark:text-gray-300">
+                    {item.description}
+                  </p>
+                </div>
+               
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </TracingBeam>
       </div>
     </section>
   );
