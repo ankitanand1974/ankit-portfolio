@@ -196,8 +196,8 @@ const TimelineSection = () => {
         <Timeline data={experience} />
       </div>
       <div className="w-full">
-        <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-          <h3 className="pt-[10%] text-4xl text-center">Education</h3>
+        <div className="max-w-7xl mx-auto pb-20 px-4 md:px-8 lg:px-10">
+          <h3 className="text-4xl text-center">Education</h3>
         </div>
         <Timeline data={education} />
       </div>
