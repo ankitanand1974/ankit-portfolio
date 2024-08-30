@@ -10,7 +10,10 @@ const TimelineSection = () => {
         <div>
           <h1>Impelsys</h1>
           <p className="py-2 text-lg">
-            Software Developer Intern <br />
+            Software Developer Intern
+            <br />
+            Mangalore, Karnataka (on-site)
+            <br />
             Feb 2024 - May 2024
           </p>
         </div>
