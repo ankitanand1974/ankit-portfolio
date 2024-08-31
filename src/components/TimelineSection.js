@@ -1,6 +1,4 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { TracingBeam } from "./ui/tracing-beam";
 import { Timeline } from "@/components/ui/timeline";
 
 const TimelineSection = () => {
