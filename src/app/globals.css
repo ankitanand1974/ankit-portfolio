@@ -17,6 +17,10 @@
 .transition-width {
   transition: width 1s ease-in-out;
 }
+.slick-dots .slick-active div {
+  background-color: #007bff; 
+}
+
 
 body {
   color: rgb(var(--foreground-rgb));
