@@ -7,7 +7,7 @@ import TimelineSection from "../components/TimelineSection";
 
 export default function Home() {
   return (
-    <main className="pt-16">
+    <main>
       <Hero />
       <About />
       <Skills />
