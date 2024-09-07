@@ -29,7 +29,7 @@ const skillCategories = [
   {
     category: "Tools & Platforms",
     skills: [
-      "GitHub",
+      "Git/GitHub",
       "AWS",
       "Docker",
       "Swagger",
@@ -39,7 +39,7 @@ const skillCategories = [
   },
   {
     category: "Concepts & Methodologies",
-    skills: ["Data-Structures", "OOPs"],
+    skills: ["Data Structures", "OOPs"],
   },
 ];
 
@@ -92,8 +92,8 @@ const Skills = () => {
         </h2>
         <Slider {...settings}>
           {skillCategories.map((category, index) => (
-            <div key={index} className="p-6">
-              <h3 className="text-2xl font-semibold mb-8 text-center dark:text-white">
+            <div key={index} className="p-6 pb-16">
+              <h3 className="text-2xl font-semibold mb-8 text-center dark:text-white pb-6">
                 {category.category}
               </h3>
               <div className="flex flex-wrap justify-center gap-6">
@@ -102,16 +102,16 @@ const Skills = () => {
                     key={skillIndex}
                     className="flex flex-col items-center w-28 sm:w-32 md:w-36 p-4 bg-white dark:bg-gray-700 rounded-xl shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:scale-105"
                   >
-                    <div className="w-16 h-16 mb-4 p-3 bg-blue-100 dark:bg-white rounded-full flex items-center justify-center">
+                    <div className="w-12 h-12 md:w-20 md:h-20 mb-4 p-2 bg-blue-100 dark:bg-white rounded-full flex items-center justify-center">
                       <img
                         src={`/icons/${skill
                           .toLowerCase()
-                          .replace(/\s+/g, "-")}.svg`}
+                          .replace(/[\s/]+/g, "-")}.svg`}
                         alt={skill}
                         className="w-10 h-10 object-contain"
                       />
                     </div>
-                    <p className="text-sm font-medium text-center dark:text-white">
+                    <p className="text-sm lg:text-base font-medium text-center dark:text-white">
                       {skill}
                     </p>
                   </div>
