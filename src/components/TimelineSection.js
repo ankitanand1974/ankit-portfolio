@@ -31,13 +31,12 @@ const TimelineSection = () => {
               processing times.
             </li>
             <li>
-              Implemented CSV data import and PDF export features. The design
-              handled large download requests efficiently, improving reporting
-              efficiency by 35% and usability ratings by 20%.
+              Utilized pagination and Chart.js to generate dynamic charts for
+              tracking metrics.
             </li>
             <li>
-              Documented the application with Swagger, and ensured
-              well-optimized and structured code reducing debugging time by 60%.
+              Implemented CSV data import and PDF export features. The design
+              handled large download requests efficiently.
             </li>
           </ul>
 

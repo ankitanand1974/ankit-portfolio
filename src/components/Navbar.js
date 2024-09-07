@@ -52,10 +52,12 @@ const StaticNav = ({ darkMode, setDarkMode }) => {
     <div className=" top-0 left-0 w-full bg-white dark:bg-black relative border border-neutral-200 dark:border-white/[0.2] rounded-md">
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
-          <Link className="text-xl font-bold text-gray-800 dark:text-white" href="/" legacyBehavior>
-            
-              Ankit Anand
-            
+          <Link
+            className="text-xl font-bold text-gray-800 dark:text-white"
+            href="/"
+            legacyBehavior
+          >
+            Ankit Anand
           </Link>
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex space-x-4">
