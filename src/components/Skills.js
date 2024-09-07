@@ -1,31 +1,46 @@
 "use client";
-import React from 'react';
-import Slider from 'react-slick';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import React from "react";
+import Slider from "react-slick";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const skillCategories = [
   {
     category: "Programming Languages",
-    skills: ["Java", "GoLang", "Python", "SQL", "JavaScript", "HTML", "CSS"]
+    skills: ["Java", "GoLang", "Python", "SQL", "JavaScript", "HTML", "CSS"],
   },
   {
     category: "Databases",
-    skills: ["MySQL", "ScyllaDB", "Redis", "Firebase", "MongoDB", "Mongoose"]
+    skills: ["MySQL", "ScyllaDB", "Redis", "Firebase", "MongoDB", "Mongoose"],
   },
   {
     category: "Frameworks & Libraries",
-    skills: ["React", "Next.js", "Node.js", "Django", "ExpressJS", "Bootstrap", "Tailwind"]
+    skills: [
+      "ReactJS",
+      "NextJS",
+      "Node",
+      "Django",
+      "ExpressJS",
+      "Bootstrap",
+      "Tailwind",
+    ],
   },
   {
     category: "Tools & Platforms",
-    skills: ["GitHub", "AWS", "Docker", "Swagger", "Postman", "Unix Tools", "Linux", "System Administration"]
+    skills: [
+      "GitHub",
+      "AWS",
+      "Docker",
+      "Swagger",
+      "Postman",
+      "Linux",
+    ],
   },
   {
     category: "Concepts & Methodologies",
-    skills: ["Data Structures", "Algorithms", "OOPs"]
-  }
+    skills: ["Data-Structures", "OOPs"],
+  },
 ];
 
 const NextArrow = ({ onClick }) => (
@@ -55,25 +70,32 @@ const Skills = () => {
     slidesToScroll: 1,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    appendDots: dots => (
+    appendDots: (dots) => (
       <div>
         <ul className="!m-0"> {dots} </ul>
       </div>
     ),
-    customPaging: i => (
+    customPaging: (i) => (
       <div className="w-3 h-3 mx-1 rounded-full bg-gray-300 dark:bg-white transition-all duration-300" />
     ),
-    dotsClass: "slick-dots slick-thumb", 
+    dotsClass: "slick-dots slick-thumb",
   };
 
   return (
-    <section id="skills" className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section
+      id="skills"
+      className="py-20 bg-gray-50 dark:bg-gray-800 transition-colors duration-300"
+    >
       <div className="container mx-auto px-6 lg:px-12">
-        <h2 className="text-4xl font-bold text-center mb-16 dark:text-white">My Skills</h2>
+        <h2 className="text-4xl font-extrabold text-center mb-16 dark:text-white">
+          My Skills
+        </h2>
         <Slider {...settings}>
           {skillCategories.map((category, index) => (
             <div key={index} className="p-6">
-              <h3 className="text-2xl font-semibold mb-8 text-center dark:text-white">{category.category}</h3>
+              <h3 className="text-2xl font-semibold mb-8 text-center dark:text-white">
+                {category.category}
+              </h3>
               <div className="flex flex-wrap justify-center gap-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div
@@ -82,12 +104,16 @@ const Skills = () => {
                   >
                     <div className="w-16 h-16 mb-4 p-3 bg-blue-100 dark:bg-white rounded-full flex items-center justify-center">
                       <img
-                        src={`/icons/${skill.toLowerCase().replace(/\s+/g, '-')}.svg`}
+                        src={`/icons/${skill
+                          .toLowerCase()
+                          .replace(/\s+/g, "-")}.svg`}
                         alt={skill}
                         className="w-10 h-10 object-contain"
                       />
                     </div>
-                    <p className="text-sm font-medium text-center dark:text-white">{skill}</p>
+                    <p className="text-sm font-medium text-center dark:text-white">
+                      {skill}
+                    </p>
                   </div>
                 ))}
               </div>
