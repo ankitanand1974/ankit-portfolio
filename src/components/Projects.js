@@ -8,12 +8,33 @@ import { BackgroundGradient } from "./ui/background-gradient";
 
 const projects = [
   {
+    title: "InstantShop",
+    description: "What is Lorem Ipsum?",
+    ctaText: "Learn More",
+    ctaLink: "https://example.com/project3",
+    src: "/testimg.png", // Replace with actual image path
+    content: () => (
+      <p>
+        Detailed information about Project 3 goes here. Detailed information
+        about Project 3 goes here. Detailed information about Project 3 goes
+        here. Detailed information about Project 3 goes here.
+        <br />.<br />.<br />.<br />.<br />
+        <br />.<br />.<br />.<br />.<br />
+        <br />.<br />.<br />.<br />.<br />
+        <br />.<br />.<br />.<br />.<br />
+        Detailed information about Project 3 goes here. Detailed information
+        about Project 3 goes here. Detailed information about Project 3 goes
+        here. Detailed information about Project 3 goes here.
+      </p>
+    ),
+  },
+  {
     title: "Adaptive Traffic Light System | AI/ML",
     description:
       "Created an adaptive traffic light system for a single-lane bridge, using YOLOv8 for real-time object detection and Roboflow for dataset management, ensuring smooth and safe traffic flow by reducing wait times by 50%.",
     ctaText: "Learn More",
     ctaLink: "https://example.com/project1",
-    src: "/path/to/project1-image.jpg", // Replace with actual image path
+    src: "/testimg2.jpg", // Replace with actual image path
     content: () => (
       <p>
         This project showcases the integration of AI and machine learning in
@@ -43,27 +64,6 @@ const projects = [
         <br />.<br />.<br />.<br />.<br />
         <br />.<br />.<br />.<br />.<br />
         <br />.<br />.<br />.<br />.<br />
-      </p>
-    ),
-  },
-  {
-    title: "Project 3",
-    description: "Description of project 3",
-    ctaText: "Learn More",
-    ctaLink: "https://example.com/project3",
-    src: "/path/to/project3-image.jpg", // Replace with actual image path
-    content: () => (
-      <p>
-        Detailed information about Project 3 goes here. Detailed information
-        about Project 3 goes here. Detailed information about Project 3 goes
-        here. Detailed information about Project 3 goes here.
-        <br />.<br />.<br />.<br />.<br />
-        <br />.<br />.<br />.<br />.<br />
-        <br />.<br />.<br />.<br />.<br />
-        <br />.<br />.<br />.<br />.<br />
-        Detailed information about Project 3 goes here. Detailed information
-        about Project 3 goes here. Detailed information about Project 3 goes
-        here. Detailed information about Project 3 goes here.
       </p>
     ),
   },
@@ -195,8 +195,8 @@ export default function Projects() {
             <BackgroundGradient className="rounded-[22px] p-4 sm:p-10 bg-white dark:bg-zinc-900">
               <motion.div layoutId={`image-${project.title}-${id}`}>
                 <Image
-                  width={100}
-                  height={100}
+                  width={500}
+                  height={300}
                   src={project.src}
                   alt={project.title}
                   className="h-60 w-full rounded-lg object-cover object-top"
