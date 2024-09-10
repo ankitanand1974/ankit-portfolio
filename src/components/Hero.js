@@ -1,8 +1,11 @@
 import React from "react";
+import { FlipWords } from "./ui/flip-words";
 
 const Hero = () => {
+  const words = ["Full Stack Web Developer", "Software Engineer"];
+
   return (
-    <section className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900 text-white min-h-screen py-12 sm:py-20">
+    <section className="bg-white dark:bg-black text-black dark:text-white min-h-screen py-12 sm:py-20">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex flex-col lg:flex-row items-center justify-evenly space-y-12 lg:space-y-0 lg:space-x-8">
           {/* Name and Photo Section */}
@@ -11,8 +14,9 @@ const Hero = () => {
               Ankit Anand
             </h1>
             <div className="text-center">
+              
               <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-                Full Stack Web Developer
+              <FlipWords words={words} /> <br />
               </h2>
             </div>
             <div className="relative mb-8 p-10">
