@@ -1,8 +1,15 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
 import { FlipWords } from "./ui/flip-words";
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
 const Hero = () => {
   const words = ["Full Stack Web Developer", "Software Engineer"];
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(true);
+  }, []);
 
   return (
     <section className="bg-white dark:bg-black text-black dark:text-white min-h-screen py-12 sm:py-20">
@@ -14,9 +21,8 @@ const Hero = () => {
               Ankit Anand
             </h1>
             <div className="text-center">
-              
               <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
-              <FlipWords words={words} /> <br />
+                <FlipWords words={words} /> <br />
               </h2>
             </div>
             <div className="relative mb-8 p-10">
@@ -36,23 +42,63 @@ const Hero = () => {
             </h2>
             <div className="text-justify">
               <p className="text-lg mb-4 pb-6">
-                Hey there! I'm Ankit, a Full Stack Web Developer who loves
-                turning ideas into user-friendly, efficient, and fun digital
-                experiences.
+                Hey there! I'm Ankit,&nbsp;
+                <RoughNotationGroup show={show}>
+                  <RoughNotation type="box" show={show} animationDuration={4000}>
+                    a Full Stack Web Developer
+                  </RoughNotation>
+                </RoughNotationGroup>
+                &nbsp;who loves turning ideas into user-friendly, efficient, and
+                fun digital experiences.
                 <br />
                 <br />
                 When I'm not buried in code, you'll probably find me diving into
-                new programming languages or figuring out how to break—and then
-                fix—things.
+                new programming languages or figuring out how to&nbsp;
+                <RoughNotation
+                  type="strike-through"
+                  show={show}
+                  iterations={1}
+                  padding={8}
+                >
+                  break
+                </RoughNotation>
+                &nbsp;and then fix—things. I thrive on&nbsp;
+                <RoughNotation
+                  type="circle"
+                  show={show}
+                  color="orange"
+                  padding={7}
+                >
+                  solving
+                </RoughNotation>
+                &nbsp;tricky problems
+                and, honestly, there's no bug too big that a bit of
+                determination can’t handle.
                 <br />
                 <br />I love connecting with people from all walks of life, and
-                I'm always curious about the world around me. Whether it's
-                exploring new cultures or collaborating with diverse teams, I'm
-                all in.
+                I'm always&nbsp;
+                <RoughNotation
+                  type="circle"
+                  show={show}
+                  color="orange"
+                  padding={7}
+                >
+                  curious
+                </RoughNotation>
+                &nbsp;about the world around me. Whether it's exploring new
+                cultures or collaborating with diverse teams, I'm all in.
                 <br />
                 <br />
-                Currently looking for my next big adventure in development—got
-                one in mind? Let's chat!
+                Currently looking for my next big &nbsp;
+                <RoughNotation
+                  type="underline"
+                  show={show}
+                  color="green"
+                  iterations={5}
+                >
+                  adventure in development
+                </RoughNotation>
+                &nbsp;—got one in mind? Let's chat!
               </p>
             </div>
             <a

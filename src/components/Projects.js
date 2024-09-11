@@ -12,7 +12,7 @@ const projects = [
     description: "What is Lorem Ipsum?",
     ctaText: "Learn More",
     ctaLink: "https://example.com/project3",
-    src: "/testimg.png", // Replace with actual image path
+    src: "/testimg.png", 
     content: () => (
       <p>
         Detailed information about Project 3 goes here. Detailed information
