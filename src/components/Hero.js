@@ -1,32 +1,31 @@
-import React from "react";
+"use client";
+import { useState, useEffect } from "react";
 import { FlipWords } from "./ui/flip-words";
+import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
 
-export default function Hero() {
+const Hero = () => {
   const words = ["Full Stack Web Developer", "Software Engineer"];
+  const [show, setShow] = useState(false);
+
+  useEffect(() => {
+    setShow(true);
+  }, []);
 
   return (
-    <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900 text-white min-h-screen flex items-center">
-      <div className="container mx-auto px-20 py-12 sm:py-24">
-        <div className="flex flex-col lg:flex-row items-center justify-evenly">
-          <div className="mb-8 lg:mb-0 lg:mr-12 order-2 lg:order-1">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 text-center lg:text-left">
+    <section className="bg-white dark:bg-black text-black dark:text-white min-h-screen py-12 sm:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex flex-col lg:flex-row items-center justify-evenly space-y-12 lg:space-y-0 lg:space-x-8">
+          {/* Name and Photo Section */}
+          <div className="w-full lg:w-1/2 flex flex-col items-center order-1">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-center">
               Ankit Anand
             </h1>
-            <div className="text-xl sm:text-2xl lg:text-3xl mb-6 text-center lg:text-left">
-              <FlipWords words={words} />
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl font-semibold mb-4">
+                <FlipWords words={words} /> <br />
+              </h2>
             </div>
-            <div className="flex justify-center lg:justify-start">
-              <a
-                href="#contact"
-                className="bg-white text-blue-600 dark:bg-gray-800 dark:text-blue-300 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 dark:hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-lg"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-          <div className="order-1 lg:order-2 mb-8 lg:mb-0">
-            <div className="relative">
-              <div className="absolute inset-0 bg-blue-300 dark:bg-blue-700 rounded-full blur-2xl opacity-50 animate-pulse"></div>
+            <div className="relative mb-8 p-10">
               <img
                 src="/profilepic.png"
                 alt="Ankit Anand"
@@ -34,8 +33,87 @@ export default function Hero() {
               />
             </div>
           </div>
+
+          {/* About Me Section */}
+          <div className="w-full lg:w-1/2 order-2 lg:px-10">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-center lg:text-left pb-6">
+              About Me
+            </h2>
+            <div className="text-justify">
+              <p className="text-lg mb-4 pb-6">
+                Hey there! I'm Ankit,&nbsp;
+                <RoughNotationGroup show={show}>
+                  <RoughNotation
+                    type="box"
+                    show={show}
+                    animationDuration={4000}
+                  >
+                    a Full Stack Web Developer
+                  </RoughNotation>
+                </RoughNotationGroup>
+                &nbsp;who loves turning ideas into user-friendly, efficient, and
+                fun digital experiences.
+                <br />
+                <br />
+                When I'm not buried in code, you'll probably find me diving into
+                new programming languages or figuring out how to&nbsp;
+                <RoughNotation
+                  type="strike-through"
+                  show={show}
+                  iterations={1}
+                  padding={8}
+                >
+                  break
+                </RoughNotation>
+                &nbsp;and then fix—things. I thrive on&nbsp;
+                <RoughNotation
+                  type="circle"
+                  show={show}
+                  color="orange"
+                  padding={7}
+                >
+                  solving
+                </RoughNotation>
+                &nbsp;tricky problems and, honestly, there's no bug too big that
+                a bit of determination can’t handle.
+                <br />
+                <br />I love connecting with people from all walks of life, and
+                I'm always&nbsp;
+                <RoughNotation
+                  type="circle"
+                  show={show}
+                  color="orange"
+                  padding={7}
+                >
+                  curious
+                </RoughNotation>
+                &nbsp;about the world around me. Whether it's exploring new
+                cultures or collaborating with diverse teams, I'm all in.
+                <br />
+                <br />
+                Currently looking for my next big &nbsp;
+                <RoughNotation
+                  type="underline"
+                  show={show}
+                  color="green"
+                  iterations={5}
+                >
+                  adventure in development
+                </RoughNotation>
+                &nbsp;—got one in mind? Let's chat!
+              </p>
+            </div>
+            <a
+              href="#contact"
+              className="inline-block bg-white text-blue-600 dark:bg-gray-800 dark:text-blue-300 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 dark:hover:bg-gray-700 transition duration-300 shadow-lg"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default Hero;

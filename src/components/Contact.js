@@ -4,11 +4,6 @@ import React from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
-import {
-  IconBrandGithub,
-  IconBrandGoogle,
-  IconBrandOnlyfans,
-} from "@tabler/icons-react";
 
 const BottomGradient = () => {
   return (
@@ -35,9 +30,9 @@ export default function Contact() {
   };
 
   return (
-    <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md shadow-input bg-white dark:bg-black">
+    <div id="contact" className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md shadow-input bg-white dark:bg-black">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
-        Contact Us
+        Contact Me!
       </h2>
       <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
         Got questions, ideas, or memes to share? Drop me a message and let’s
