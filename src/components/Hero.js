@@ -26,7 +26,6 @@ const Hero = () => {
               </h2>
             </div>
             <div className="relative mb-8 p-10">
-              <div className="absolute inset-0 rounded-full"></div>
               <img
                 src="/profilepic.png"
                 alt="Ankit Anand"
@@ -44,7 +43,11 @@ const Hero = () => {
               <p className="text-lg mb-4 pb-6">
                 Hey there! I'm Ankit,&nbsp;
                 <RoughNotationGroup show={show}>
-                  <RoughNotation type="box" show={show} animationDuration={4000}>
+                  <RoughNotation
+                    type="box"
+                    show={show}
+                    animationDuration={4000}
+                  >
                     a Full Stack Web Developer
                   </RoughNotation>
                 </RoughNotationGroup>
@@ -71,9 +74,8 @@ const Hero = () => {
                 >
                   solving
                 </RoughNotation>
-                &nbsp;tricky problems
-                and, honestly, there's no bug too big that a bit of
-                determination can’t handle.
+                &nbsp;tricky problems and, honestly, there's no bug too big that
+                a bit of determination can’t handle.
                 <br />
                 <br />I love connecting with people from all walks of life, and
                 I'm always&nbsp;

@@ -94,7 +94,7 @@ export default function Projects() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <div className="pt-10">
+    <div id="projects" className="bg-white dark:bg-black pt-10">
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
         My projects
       </h2>

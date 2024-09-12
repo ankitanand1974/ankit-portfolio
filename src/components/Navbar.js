@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { FloatingNav } from "./ui/floating-navbar";
 import useDarkMode from "../hooks/useDarkMode";
-import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+import { IconHome, IconMessage } from "@tabler/icons-react";
 import { SunIcon, MoonIcon, CloseIcon, MenuIcon } from "../components/Icons";
 
 export function Navbar() {
@@ -26,13 +26,8 @@ export function Navbar() {
       icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
-      name: "About",
-      link: "/about",
-      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
-    },
-    {
       name: "Contact",
-      link: "/contact",
+      link: "#contact",
       icon: (
         <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
       ),
