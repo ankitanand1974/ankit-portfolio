@@ -2,9 +2,10 @@
 import { useState, useEffect } from "react";
 import { FlipWords } from "./ui/flip-words";
 import { RoughNotation, RoughNotationGroup } from "react-rough-notation";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 const Hero = () => {
-  const words = ["Full Stack Web Developer", "Software Engineer"];
+  const words = ["Full Stack Web Developer", "Software Engineer"];
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -25,12 +26,32 @@ const Hero = () => {
                 <FlipWords words={words} /> <br />
               </h2>
             </div>
-            <div className="relative mb-8 p-10">
+            <div className="relative mb-8 p-8">
               <img
                 src="/profilepic.png"
                 alt="Ankit Anand"
                 className="rounded-full w-64 h-64 sm:w-80 sm:h-80 object-cover border-4 border-white dark:border-gray-700 shadow-2xl relative z-10"
               />
+            </div>
+            <div className="flex space-x-4 mb-4 px-16">
+              <a
+                href="https://github.com/ankitanand1974"
+                className="hover:text-gray-400 transition-colors duration-300"
+              >
+                <Github size={40} />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/ankitanand1974/"
+                className="hover:text-blue-600 transition-colors duration-300"
+              >
+                <Linkedin size={40} />
+              </a>
+              <a
+                href="mailto:ankitanand1974@gmail.com"
+                className="hover:text-red-400 transition-colors duration-300"
+              >
+                <Mail size={40} />
+              </a>
             </div>
           </div>
 
