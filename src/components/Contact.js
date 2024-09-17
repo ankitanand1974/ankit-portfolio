@@ -38,7 +38,6 @@ export default function Contact() {
       `Name: ${name}\n\nEmail: ${email}\n\nMessage: ${message}`
     )}`;
 
-    // Redirect to the mailto link (this opens the user's default email client)
     window.location.href = mailtoLink;
   };
 
