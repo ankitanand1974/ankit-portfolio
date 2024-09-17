@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
@@ -23,14 +23,29 @@ const LabelInputContainer = ({ children, className }) => {
 };
 
 export default function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [subject, setSubject] = useState("");
+  const [message, setMessage] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted");
-    // Add your form submission logic here
+
+    // Create the mailto link
+    const mailtoLink = `mailto:[ankitanand1974@gmail.com]?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(
+      `Name: ${name}\n\nEmail: ${email}\n\nMessage: ${message}`
+    )}`;
+
+    window.location.href = mailtoLink;
   };
 
   return (
-    <div id="contact" className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md shadow-input bg-white dark:bg-black">
+    <div
+      id="contact"
+      className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md shadow-input bg-white dark:bg-black"
+    >
       <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
         Contact Me!
       </h2>
@@ -41,12 +56,24 @@ export default function Contact() {
       <form className="space-y-8" onSubmit={handleSubmit}>
         <LabelInputContainer>
           <Label htmlFor="name">Your Name</Label>
-          <Input id="name" placeholder="Tyler" type="text" />
+          <Input
+            id="name"
+            placeholder="Tyler"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">
           <Label htmlFor="email">Email Address</Label>
-          <Input id="email" placeholder="name@email.com" type="email" />
+          <Input
+            id="email"
+            placeholder="name@email.com"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </LabelInputContainer>
 
         <LabelInputContainer className="mb-4">
@@ -55,6 +82,8 @@ export default function Contact() {
             id="subject"
             placeholder="Let me know how I can assist you"
             type="text"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
           />
         </LabelInputContainer>
 
@@ -62,7 +91,6 @@ export default function Contact() {
           <Label className="block mb-2 text-sm font-medium" htmlFor="message">
             Message
           </Label>
-
           <textarea
             id="message"
             rows="6"
@@ -70,7 +98,9 @@ export default function Contact() {
            disabled:cursor-not-allowed disabled:opacity-50
            dark:shadow-[0px_0px_1px_1px_var(--neutral-700)]
            group-hover/input:shadow-none transition duration-400 bg-gray-50 dark:bg-zinc-800 shadow-input block p-2 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-            placeholder="Leave a comment..." type="text"
+            placeholder="Leave a comment..."
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
           ></textarea>
         </LabelInputContainer>
 
