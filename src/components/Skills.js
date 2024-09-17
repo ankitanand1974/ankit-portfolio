@@ -43,6 +43,7 @@ const skillCategories = [
   },
 ];
 
+
 const NextArrow = ({ onClick }) => (
   <button
     onClick={onClick}
