@@ -44,13 +44,12 @@ export function Navbar() {
 
 const StaticNav = ({ darkMode, setDarkMode }) => {
   return (
-    <div className=" top-0 left-0 w-full bg-white dark:bg-black relative border border-neutral-200 dark:border-white/[0.2] rounded-md">
+    <div className=" top-0 left-0 w-full bg-gray-900 dark:bg-black relative border border-neutral-200 dark:border-white/[0.2] rounded-md">
       <div className="container mx-auto px-6 py-3">
         <div className="flex justify-between items-center">
           <Link
-            className="text-xl font-bold text-gray-800 dark:text-white"
+            className="text-white hover:text-[#DFA878] text-xl font-bold"
             href="/"
-            legacyBehavior
           >
             Ankit Anand
           </Link>
@@ -58,25 +57,25 @@ const StaticNav = ({ darkMode, setDarkMode }) => {
             <div className="hidden md:flex space-x-4">
               <Link
                 href="/#about"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                className="font-bold text-white hover:text-[#DFA878]"
               >
                 About
               </Link>
               <Link
                 href="/#skills"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                className="font-bold text-white hover:text-[#DFA878]"
               >
                 Skills
               </Link>
               <Link
                 href="/#projects"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                className="font-bold text-white hover:text-[#DFA878]"
               >
                 Projects
               </Link>
               <Link
                 href="/#contact"
-                className="text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white"
+                className="font-bold text-white hover:text-[#DFA878]"
               >
                 Contact
               </Link>

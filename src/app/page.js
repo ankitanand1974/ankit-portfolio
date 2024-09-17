@@ -11,7 +11,7 @@ export default function Home() {
       <Skills />
       <Projects />
       <TimelineSection />
-      <div className="bg-grey dark:bg-black p-10"><Contact /></div>
+      <div className="bg-white dark:bg-black p-10"><Contact /></div>
       
     </main>
   );
